@@ -1,10 +1,10 @@
 /*
  * @Author: wangtianji
  * @Date: 2021-07-29 15:30:37
- * @LastEditTime: 2021-07-29 15:34:21
+ * @LastEditTime: 2021-07-29 17:40:34
  * @LastEditors: wangtianji
  * @Description: 
- * @FilePath: /SSFlutter/lib/08_functional/ssdatepicker.dart
+ * @FilePath: /sbflutter/lib/08_functional/ssdatepicker.dart
  */
 
 import 'package:flutter/material.dart';
@@ -35,6 +35,20 @@ class _ssdatepickerState extends State<ssdatepicker> {
                   lastDate: DateTime(2025),
                 );
               }),
+          RaisedButton(
+            child: Text('弹出时间选择器'),
+            onPressed: () async {
+              var result = showTimePicker(
+                  context: context, initialTime: TimeOfDay.now());
+            },
+          ),
+          RaisedButton(
+            child: Text('弹出时间选择器'),
+            onPressed: () async {
+              var result = showTimePicker(
+                  context: context, initialTime: TimeOfDay.now());
+            },
+          )
         ],
       ),
     );
