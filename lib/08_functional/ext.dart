@@ -1,7 +1,7 @@
 /*
  * @Author: wangtianji
  * @Date: 2021-07-29 15:30:00
- * @LastEditTime: 2021-07-29 17:45:06
+ * @LastEditTime: 2021-07-29 18:27:38
  * @LastEditors: wangtianji
  * @Description: 
  * @FilePath: /sbflutter/lib/08_functional/ext.dart
@@ -10,7 +10,9 @@
 import 'ssdatepicker.dart';
 import 'sbcupertinodatepicker.dart';
 import 'sbpopupmenubutton.dart';
+import 'sbshapeborder.dart';
 import '../demos.dart';
+import 'sbdraggable.dart';
 
 final functions = [
   Demo(
@@ -25,4 +27,12 @@ final functions = [
       name: "sbpopupmenubutton",
       route: sbpopupmenubutton.routeName,
       builder: (context) => sbpopupmenubutton()),
+  Demo(
+      name: "sbshapeborder",
+      route: sbshapeborder.routeName,
+      builder: (context) => sbshapeborder()),
+  Demo(
+      name: "sbdraggable",
+      route: sbdraggable.routeName,
+      builder: (context) => sbdraggable()),
 ];
