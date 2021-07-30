@@ -1,7 +1,7 @@
 /*
  * @Author: wangtianji
  * @Date: 2021-06-23 15:50:18
- * @LastEditTime: 2021-07-30 17:35:38
+ * @LastEditTime: 2021-07-30 18:23:36
  * @LastEditors: wangtianji
  * @Description: 
  * @FilePath: /sbflutter/lib/main.dart
@@ -47,12 +47,23 @@ class AnimationSamples extends StatelessWidget {
         return MaterialPageRoute(builder: (context) => UnknownScreen());
       },
 
-      theme: ThemeData(primarySwatch: Colors.blue //主题色
-
-          ),
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        accentColor: Colors.blue.shade50, //主题色
+        cardColor: Colors.blue.shade100, //主题色
+        shadowColor: Colors.blue.shade200, //主题色
+        splashColor: Colors.blue.shade300, //主题色
+        selectedRowColor: Colors.blue.shade900, //主题色
+      ),
       darkTheme: ThemeData(
         primarySwatch: Colors.red, //主题色
+        accentColor: Colors.red.shade50, //主题色
+        cardColor: Colors.red.shade100, //主题色
+        shadowColor: Colors.red.shade200, //主题色
+        splashColor: Colors.red.shade300, //主题色
+        selectedRowColor: Colors.red.shade900, //主题色
       ),
+
       themeMode: ThemeMode.system,
     );
   }
