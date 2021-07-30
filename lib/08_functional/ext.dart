@@ -1,7 +1,7 @@
 /*
  * @Author: wangtianji
  * @Date: 2021-07-29 15:30:00
- * @LastEditTime: 2021-07-29 18:27:38
+ * @LastEditTime: 2021-07-30 10:37:21
  * @LastEditors: wangtianji
  * @Description: 
  * @FilePath: /sbflutter/lib/08_functional/ext.dart
@@ -13,6 +13,7 @@ import 'sbpopupmenubutton.dart';
 import 'sbshapeborder.dart';
 import '../demos.dart';
 import 'sbdraggable.dart';
+import 'sbInteractiveViewer.dart';
 
 final functions = [
   Demo(
@@ -35,4 +36,8 @@ final functions = [
       name: "sbdraggable",
       route: sbdraggable.routeName,
       builder: (context) => sbdraggable()),
+  Demo(
+      name: "sbInteractiveViewer",
+      route: InteractiveViewerDemo.routeName,
+      builder: (context) => InteractiveViewerDemo()),
 ];
