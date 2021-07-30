@@ -74,7 +74,7 @@ class animatedControllerState extends State<animatedController>
           child: Container(
             height: _size,
             width: _size,
-            color: Colors.deepOrange[700],
+            color: Theme.of(context).primaryColor,
             alignment: Alignment.center,
             child: Text(
               "点我变大",

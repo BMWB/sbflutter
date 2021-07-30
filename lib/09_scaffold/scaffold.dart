@@ -162,7 +162,7 @@ class _HoneScreenState extends State<HoneScreen>
               }),
         ),
         endDrawer: ssdrawer(),
-        drawerScrimColor: Colors.orange.shade50,
+        drawerScrimColor: Theme.of(context).primaryColor,
         // drawerEdgeDragWidth: 200,
         // bottomSheet: _bottomSheet(),
         // drawerEnableOpenDragGesture: false,

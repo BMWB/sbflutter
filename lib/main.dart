@@ -1,7 +1,7 @@
 /*
  * @Author: wangtianji
  * @Date: 2021-06-23 15:50:18
- * @LastEditTime: 2021-07-30 14:29:08
+ * @LastEditTime: 2021-07-30 17:35:38
  * @LastEditors: wangtianji
  * @Description: 
  * @FilePath: /sbflutter/lib/main.dart
@@ -22,9 +22,6 @@ class AnimationSamples extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Animation Samples",
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
       routes: allRoutes,
       // initialRoute: '/lib/navigator/abcde/PageA.dart',
       home: HoneScreen(), //    /
@@ -49,6 +46,14 @@ class AnimationSamples extends StatelessWidget {
       onUnknownRoute: (settings) {
         return MaterialPageRoute(builder: (context) => UnknownScreen());
       },
+
+      theme: ThemeData(primarySwatch: Colors.blue //主题色
+
+          ),
+      darkTheme: ThemeData(
+        primarySwatch: Colors.red, //主题色
+      ),
+      themeMode: ThemeMode.system,
     );
   }
 }

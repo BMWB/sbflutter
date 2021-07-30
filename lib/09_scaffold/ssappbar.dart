@@ -42,7 +42,6 @@ class ssappbar extends AppBar {
                 },
                 icon: Icon(Icons.menu_book));
           }),
-          backgroundColor: Colors.orange,
           title: Text("望京钢铁侠"),
           // toolbarHeight: 500,
           // flexibleSpace: _flexibleSpaceBar(),
