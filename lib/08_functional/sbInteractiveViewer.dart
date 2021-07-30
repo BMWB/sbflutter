@@ -20,6 +20,8 @@ main(List<String> args) {
 ///
 
 class InteractiveViewerDemo extends StatefulWidget {
+  static String routeName = '/lib/08_functional/sbInteractiveViewer.dart';
+
   @override
   _InteractiveViewerDemoState createState() => _InteractiveViewerDemoState();
 }

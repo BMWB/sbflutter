@@ -1,19 +1,21 @@
 /*
  * @Author: your name
  * @Date: 2021-07-17 10:46:35
- * @LastEditTime: 2021-07-29 10:56:22
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-07-30 14:15:28
+ * @LastEditors: wangtianji
  * @Description: In User Settings Edit
- * @FilePath: /ssflutter/lib/router/pages.dart
+ * @FilePath: /sbflutter/lib/10_router/pages.dart
  */
 
 library nav2_pages;
 
 import 'package:flutter/material.dart';
+import 'package:sbflutter/11_animate/animated_controller.dart';
 import 'book/book.dart';
 import 'book/bookdetailsscreen.dart';
 import 'book/bookslistscreen.dart';
 import 'book/bookdetailspage.dart';
+import '../11_animate/ext.dart';
 
 void main() {
   runApp(BooksApp());
@@ -46,7 +48,8 @@ class _BooksAppState extends State<BooksApp> {
               onTapped: _handleBookTapped,
             ),
           ),
-          ..._bookPages.map((e) => BookDetailsPage(book: e))
+          ..._bookPages.map((e) => BookDetailsPage(book: e)),
+          // ...animatespages
         ],
         onPopPage: (route, result) {
           if (!route.didPop(result)) {

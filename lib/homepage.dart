@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 
 import '13_channel/ext.dart';
 import './11_animate/ext.dart';
-import '08_functional/ext.dart';
+import './08_functional/ext.dart';
 import './07_sliver/ext.dart';
 import './06_scrollview/ext.dart';
 import './10_navigator/ext.dart';
+import './05_eventbus/ext.dart';
 
 import 'demos.dart';
 
@@ -23,6 +24,7 @@ final Demos = [
   ...slivers,
   ...navigators,
   ...channels,
+  ...eventbus,
 ];
 
 class MyHomePage extends StatefulWidget {
@@ -58,6 +60,10 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
       children: [
         ListTile(
             hoverColor: Colors.grey,
+            title: Text("05_eventbus", style: headerStyle)),
+        ...eventbus.map((e) => DemoTile(demo: e)),
+        ListTile(
+            hoverColor: Colors.grey,
             title: Text("06_scrollview", style: headerStyle)),
         ...scrolls.map((e) => DemoTile(demo: e)),
         ListTile(
@@ -88,60 +94,60 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance!.addObserver(this);
-    print('-----------------------> 初始化 initState');
+    // WidgetsBinding.instance!.addObserver(this);
+    // print('-----------------------> 初始化 initState');
 
-    WidgetsBinding.instance!.addPostFrameCallback((_) =>
-        {print("----------------------->单次Frame绘制回调(addPostFrameCallback)")});
+    // WidgetsBinding.instance!.addPostFrameCallback((_) =>
+    //     {print("----------------------->单次Frame绘制回调(addPostFrameCallback)")});
 
-    WidgetsBinding.instance!.addPersistentFrameCallback((_) {
-      print("----------------------->实时Frame绘制回调(addPostFrameCallback)");
-    });
+    // WidgetsBinding.instance!.addPersistentFrameCallback((_) {
+    //   print("----------------------->实时Frame绘制回调(addPostFrameCallback)");
+    //   });
   }
 
   @override
   void didUpdateWidget(covariant oldWidget) {
     super.didUpdateWidget(oldWidget);
-    print('----------------------->组件更新 didUpdateWidget');
+    // print('----------------------->组件更新 didUpdateWidget');
   }
 
   @override
   void reassemble() {
     super.reassemble();
-    print('重新安装 reassemble');
+    // print('重新安装 reassemble');
   }
 
   @override
   void deactivate() {
     super.deactivate();
-    print('停用  deactivate');
-    print('----------------------->停用  deactivate');
+    // print('停用  deactivate');
+    // print('----------------------->停用  deactivate');
   }
 
   @override
   void setState(fn) {
     super.setState(fn);
-    print('状态刷新 setState');
+    // print('状态刷新 setState');
   }
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    print('----------------------->依赖改变 didChangeDependencies');
+    // print('----------------------->依赖改变 didChangeDependencies');
   }
 
   @override
   void dispose() {
     super.dispose();
     WidgetsBinding.instance!.removeObserver(this); //销毁观察者
-    print('----------------------->销毁 dispose');
+    // print('----------------------->销毁 dispose');
   }
 
   ///当前系统改变了一些访问性活动的回调
   @override
   void didChangeAccessibilityFeatures() {
     super.didChangeAccessibilityFeatures();
-    print("@@@@@@@@@ didChangeAccessibilityFeatures");
+    // print("@@@@@@@@@ didChangeAccessibilityFeatures");
   }
 
   /// Called when the system is running low on memory.
@@ -149,7 +155,7 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
   @override
   void didHaveMemoryPressure() {
     super.didHaveMemoryPressure();
-    print("@@@@@@@@@ didHaveMemoryPressure");
+    // print("@@@@@@@@@ didHaveMemoryPressure");
   }
 
   /// Called when the system tells the app that the user's locale has
@@ -159,7 +165,7 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
   @override
   void didChangeLocales(List<Locale>? locales) {
     super.didChangeLocales(locales);
-    print("@@@@@@@@@ didChangeLocales");
+    // print("@@@@@@@@@ didChangeLocales");
   }
 
   /// Called when the application's dimensions change. For example,
@@ -169,22 +175,22 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
   void didChangeMetrics() {
     super.didChangeMetrics();
     Size size = WidgetsBinding.instance!.window.physicalSize;
-    print("@@@@@@@@@ didChangeMetrics  ：宽：${size.width} 高：${size.height}");
+    // print("@@@@@@@@@ didChangeMetrics  ：宽：${size.width} 高：${size.height}");
   }
 
   /// {@macro on_platform_brightness_change}
   @override
   void didChangePlatformBrightness() {
     super.didChangePlatformBrightness();
-    print("@@@@@@@@@ didChangePlatformBrightness");
+    // print("@@@@@@@@@ didChangePlatformBrightness");
   }
 
   ///文字系数变化
   @override
   void didChangeTextScaleFactor() {
     super.didChangeTextScaleFactor();
-    print(
-        "@@@@@@@@@ didChangeTextScaleFactor  ：${WidgetsBinding.instance!.window.textScaleFactor}");
+    // print(
+    // "@@@@@@@@@ didChangeTextScaleFactor  ：${WidgetsBinding.instance!.window.textScaleFactor}");
   }
 
   // AppLifecycleState 就是 App 的生命周期
@@ -197,7 +203,7 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     super.didChangeAppLifecycleState(state);
-    print("@@@@@@@@@  生命周期变化时回调 @@@@@@@@@: $state");
+    // print("@@@@@@@@@  生命周期变化时回调 @@@@@@@@@: $state");
   }
 }
 

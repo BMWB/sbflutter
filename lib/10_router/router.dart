@@ -1,10 +1,10 @@
 /*
  * @Author: your name
  * @Date: 2021-07-29 11:06:53
- * @LastEditTime: 2021-07-29 13:43:55
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-07-30 14:10:29
+ * @LastEditors: wangtianji
  * @Description: In User Settings Edit
- * @FilePath: /SSFlutter/lib/router/router.dart
+ * @FilePath: /sbflutter/lib/10_router/router.dart
  */
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +13,7 @@ import 'book/bookdetailsscreen.dart';
 import 'book/bookslistscreen.dart';
 import 'book/bookdetailspage.dart';
 import 'book/bookroutepath.dart';
+import '../11_animate/ext.dart';
 
 void main() {
   runApp(BooksApp());
