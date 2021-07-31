@@ -1,31 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '13_channel/ext.dart';
-import './11_animate/ext.dart';
-import './08_functional/ext.dart';
-import './07_sliver/ext.dart';
-import './06_scrollview/ext.dart';
-import './10_navigator/ext.dart';
-import './05_eventbus/ext.dart';
-
 import 'demos.dart';
-
-final animatedDemoRoutes =
-    Map.fromEntries(Demos.map((e) => MapEntry(e.route, e.builder)));
-
-final allRoutes = <String, WidgetBuilder>{
-  ...animatedDemoRoutes,
-};
-
-final Demos = [
-  ...animates,
-  ...scrolls,
-  ...functions,
-  ...slivers,
-  ...navigators,
-  ...channels,
-  ...eventbus,
-];
+import 'package:sbflutter/10_sb_pages/data/sb.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
@@ -217,8 +193,10 @@ class DemoTile extends StatelessWidget {
     return ListTile(
       title: Text(demo.name),
       onTap: () {
-        Navigator.pushNamed(context, demo.route);
+        // Navigator.pushNamed(context, demo.route);
 
+        Navigator.push(
+            context, MaterialPageRoute(builder: allRoutes[demo.route]!));
         // Navigator.pushNamed(context, '/lib/sliver/sliverAppBar.dart');
       },
     );

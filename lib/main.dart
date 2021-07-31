@@ -1,14 +1,41 @@
 /*
  * @Author: wangtianji
  * @Date: 2021-06-23 15:50:18
- * @LastEditTime: 2021-07-30 18:23:36
+ * @LastEditTime: 2021-07-31 14:43:52
  * @LastEditors: wangtianji
  * @Description: 
  * @FilePath: /sbflutter/lib/main.dart
  */
 import 'package:flutter/material.dart';
 import '09_scaffold/scaffold.dart';
-import 'package:sbflutter/homepage.dart';
+import 'package:sbflutter/10_sb_pages/data/sb.dart';
+
+import '10_sb_pages/sb_delegate.dart';
+import '10_sb_pages/sb_information_parser.dart';
+
+// main(List<String> args) {
+//   runApp(sbApp());
+// }
+
+// class sbApp extends StatefulWidget {
+//   sbApp({Key? key}) : super(key: key);
+
+//   @override
+//   _sbAppState createState() => _sbAppState();
+// }
+
+// class _sbAppState extends State<sbApp> {
+//   SBRouterDelegate _routerDelegate = SBRouterDelegate();
+//   SBRouteInformationParser _routeInformationParser = SBRouteInformationParser();
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp.router(
+//         title: 'sb App',
+//         routeInformationParser: _routeInformationParser,
+//         routerDelegate: _routerDelegate);
+//   }
+// }
 
 void main() {
   print('这是个main');
@@ -132,6 +159,3 @@ class MyObserver extends NavigatorObserver {
     print("didStopUserGesture");
   }
 }
-
-
-//
