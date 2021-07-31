@@ -86,11 +86,11 @@ class SBRouterDelegate extends RouterDelegate<SBRoutePath>
     show404 = false;
   }
 
-  // void _handleVeggieTapped(sb veggie) {
-  //   print("_handleVeggieTapped");
-  //   _selectedsb = veggie;
-  //   notifyListeners();
-  // }
+  void _handleVeggieTapped(sb veggie) {
+    print("_handleVeggieTapped");
+    _bookPages.add(veggie);
+    notifyListeners();
+  }
 }
 
 class UnknownScreen extends StatelessWidget {

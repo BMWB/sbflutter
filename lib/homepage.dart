@@ -193,10 +193,10 @@ class DemoTile extends StatelessWidget {
     return ListTile(
       title: Text(demo.name),
       onTap: () {
-        // Navigator.pushNamed(context, demo.route);
+        Navigator.pushNamed(context, demo.route);
 
-        Navigator.push(
-            context, MaterialPageRoute(builder: allRoutes[demo.route]!));
+        // Navigator.push(
+        //     context, MaterialPageRoute(builder: allRoutes[demo.route]!));
         // Navigator.pushNamed(context, '/lib/sliver/sliverAppBar.dart');
       },
     );
