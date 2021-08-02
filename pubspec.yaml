@@ -24,9 +24,10 @@ dependencies:
   flutter:
     sdk: flutter
   pigeon:
-  provider:
+  # provider:
   flustars:
   bloc: ^7.0.0
+  flutter_bloc:
 
 
 
