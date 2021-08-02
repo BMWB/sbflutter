@@ -26,6 +26,7 @@ dependencies:
   pigeon:
   provider:
   flustars:
+  bloc: ^7.0.0
 
 
 
