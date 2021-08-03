@@ -9,7 +9,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'sb_counter_cubit_cubit.dart';
+import 'bloc/sb_counter_cubit_cubit.dart';
 
 class SBCounterView extends StatelessWidget {
   // const SBCounterView({Key? key}) : super(key: key);
