@@ -1,3 +1,11 @@
+/*
+ * @Author: wangtianji
+ * @Date: 2021-08-02 17:06:27
+ * @LastEditTime: 2021-08-03 14:27:36
+ * @LastEditors: wangtianji
+ * @Description: 
+ * @FilePath: /sbflutter/lib/20_status/sbbloc/bloc/sb_counter_bloc.dart
+ */
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
@@ -13,6 +21,10 @@ class SbCounterBloc extends Bloc<SbCounterEvent, SbCounterState> {
   Stream<SbCounterState> mapEventToState(
     SbCounterEvent event,
   ) async* {
-    // TODO: implement mapEventToState
+    if (event is SbFetchData) {
+      yield SbCounterLoading();
+      await Future.delayed(Duration(seconds: 2));
+      yield SbCounterSuccess();
+    }
   }
 }
