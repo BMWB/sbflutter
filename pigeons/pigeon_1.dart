@@ -7,17 +7,17 @@
  * @FilePath: /ssflutter/pigeons/pigeon_1.dart
  */
 
-import 'package:pigeon/pigeon.dart';
+// import 'package:pigeon/pigeon.dart';
 
-class SearchRequest {
-  late String query;
-}
+// class SearchRequest {
+//   late String query;
+// }
 
-class SearchReply {
-  late String result;
-}
+// class SearchReply {
+//   late String result;
+// }
 
-@HostApi()
-abstract class Api {
-  SearchReply search(SearchRequest request);
-}
+// @HostApi()
+// abstract class Api {
+//   SearchReply search(SearchRequest request);
+// }

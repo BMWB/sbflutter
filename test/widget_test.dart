@@ -1,3 +1,11 @@
+/*
+ * @Author: wangtianji
+ * @Date: 2021-08-03 11:20:13
+ * @LastEditTime: 2021-08-03 11:25:40
+ * @LastEditors: wangtianji
+ * @Description: 
+ * @FilePath: /sbflutter/test/widget_test.dart
+ */
 // This is a basic Flutter widget test.
 //
 // To perform an interaction with a widget in your test, use the WidgetTester
