@@ -24,6 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
   bloc: ^7.0.0
+  path_provider:
   flutter_bloc:
   http: ^0.13.0
   equatable: ^2.0.3
