@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-07-29 11:06:53
- * @LastEditTime: 2021-08-03 15:21:01
+ * @LastEditTime: 2021-08-03 21:36:10
  * @LastEditors: wangtianji
  * @Description: In User Settings Edit
  * @FilePath: /sbflutter/lib/10_router/router.dart
@@ -114,10 +114,12 @@ class BookRouterDelegate extends RouterDelegate<BookRoutePath>
             onTapped: _handleBookTapped,
           ),
         ),
-        if (show404)
-          MaterialPage(key: ValueKey('UnknownPage'), child: UnknownScreen())
-        else if (_selectedBook != null)
-          BookDetailsPage(book: _selectedBook!)
+        MaterialPage(key: ValueKey('UnknownPage'), child: UnknownScreen()),
+        // BookDetailsPage(book: _selectedBook!),
+        // if (show404)
+        //   MaterialPage(key: ValueKey('UnknownPage'), child: UnknownScreen())
+        // else if (_selectedBook != null)
+        //   BookDetailsPage(book: _selectedBook!)
       ],
       onPopPage: (route, result) {
         if (!route.didPop(result)) {
