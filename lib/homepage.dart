@@ -61,6 +61,10 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
         ...animates.map((e) => DemoTile(demo: e)),
         ListTile(
             hoverColor: Colors.grey,
+            title: Text("12_data_network", style: headerStyle)),
+        ...datas.map((e) => DemoTile(demo: e)),
+        ListTile(
+            hoverColor: Colors.grey,
             title: Text("13_channel", style: headerStyle)),
         ...channels.map((e) => DemoTile(demo: e)),
       ],
