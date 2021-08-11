@@ -1,7 +1,7 @@
 /*
  * @Author: wangtianji
  * @Date: 2021-08-11 10:22:37
- * @LastEditTime: 2021-08-11 11:16:50
+ * @LastEditTime: 2021-08-11 14:07:13
  * @LastEditors: wangtianji
  * @Description: 
  * @FilePath: /sbflutter/lib/12_Data_network/sb_path_provider.dart
@@ -138,33 +138,20 @@ class _PathProviderDemoState extends State<PathProviderDemo> {
           itemExtent: 250,
           children: <Widget>[
             _buildItem(
-                'getTemporaryDirectory',
-                '临时目录，适用于下载的缓存文件，此目录随时可以清除，此目录为应用程序私有目录，其他应用程序无法访问此目录。',
-                _tempDirectory),
-            _buildItem(
-                'getApplicationSupportDirectory',
-                "应用程序可以在其中放置应用程序支持文件的目录的路径。将此文件用于您不想向用户公开的文件。 您的应用不应将此目录用于存放用户数据文件。",
+                'getTemporaryDirectory', '获取临时文件路径(IOS和安卓通用)', _tempDirectory),
+            _buildItem('getApplicationSupportDirectory', "获取应用支持目录(IOS和安卓通用)",
                 _appSupportDirectory),
-            _buildItem(
-                'getLibraryDirectory',
-                "应用程序可以在其中存储持久性文件，备份文件以及对用户不可见的文件的目录路径，例如storage.sqlite.db。",
+            _buildItem('getLibraryDirectory', "获取应用持久存储目录路径(仅IOS可用)",
                 _appLibraryDirectory),
-            _buildItem(
-                'getApplicationDocumentsDirectory',
-                "应用程序可能在其中放置用户生成的数据或应用程序无法重新创建的数据的目录路径。",
+            _buildItem('getApplicationDocumentsDirectory', "获取应用文件目录(IOS和安卓通用)",
                 _appDocumentsDirectory),
-            _buildItem(
-                'getExternalStorageDirectory',
-                "应用程序可以访问顶级存储的目录的路径。由于此功能仅在Android上可用，因此应在发出此函数调用之前确定当前操作系统。",
+            _buildItem('getExternalStorageDirectory', "获取外部存储目录(仅安卓可用)",
                 _externalStorageDirectory),
-            _buildItem('getDownloadsDirectory', "", _downloadDirectory),
-            _buildItem1(
-                'getExternalStorageDirectories',
-                "可以存储应用程序特定数据的目录的路径。 这些路径通常位于外部存储（如单独的分区或SD卡）上。 由于此功能仅在Android上可用，因此应在发出此函数调用之前确定当前操作系统。 在iOS上，此功能会抛出UnsupportedError，因为这是不可能的在应用程序的沙箱外部访问。",
+            _buildItem('getDownloadsDirectory', "获取下载目录(仅桌面可用 安卓和IOS报错)",
+                _downloadDirectory),
+            _buildItem1('getExternalStorageDirectories', "获取外部存储目录列表(仅安卓可用)",
                 _externalStorageDirectories),
-            _buildItem1(
-                'getExternalCacheDirectories',
-                "存储特定于应用程序的外部缓存数据的目录的路径。 这些路径通常位于外部存储（如单独的分区或SD卡）上。 电话可能具有多个可用的存储目录。 由于此功能仅在Android上可用，因此应在发出此函数调用之前确定当前操作系统。 在iOS上，此功能会抛出UnsupportedError，因为这是不可能的在应用程序的沙箱外部访问。",
+            _buildItem1('getExternalCacheDirectories', "获取外部缓存目录(仅安卓可用)",
                 _externalCacheDirectories),
           ],
         ),
