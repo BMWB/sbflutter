@@ -1,7 +1,7 @@
 /*
  * @Author: wangtianji
  * @Date: 2021-08-11 10:22:37
- * @LastEditTime: 2021-08-11 14:07:13
+ * @LastEditTime: 2021-08-11 14:28:36
  * @LastEditors: wangtianji
  * @Description: 
  * @FilePath: /sbflutter/lib/12_Data_network/sb_path_provider.dart
@@ -9,6 +9,7 @@
 
 library PathProviderDemo;
 
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -158,4 +159,72 @@ class _PathProviderDemoState extends State<PathProviderDemo> {
       ),
     );
   }
+}
+
+//创建文件夹：
+_createDir() async {
+  Directory documentsDirectory = await getApplicationDocumentsDirectory();
+  String path = '${documentsDirectory.path}${Platform.pathSeparator}dirName';
+  var dir = Directory(path);
+  var exist = dir.existsSync();
+  if (exist) {
+    print('当前文件夹已经存在');
+  } else {
+    var result = await dir.create();
+    print('$result');
+  }
+}
+
+//遍历文件夹
+_dirList() async {
+  Directory documentsDirectory = await getApplicationDocumentsDirectory();
+  String path = '${documentsDirectory.path}${Platform.pathSeparator}dirName';
+
+  Stream<FileSystemEntity> fileList = Directory(path).list();
+
+  await for (FileSystemEntity fileSystemEntity in fileList) {
+    print('$fileSystemEntity');
+  }
+}
+
+//重命名
+_dirRename() async {
+  Directory documentsDirectory = await getApplicationDocumentsDirectory();
+  String path = '${documentsDirectory.path}${Platform.pathSeparator}dirName';
+  var dir = Directory(path);
+  var dir3 = await dir
+      .rename('${dir.parent.absolute.path}${Platform.pathSeparator}dir3');
+}
+
+//删除文件夹：
+_deleteDir() async {
+  Directory documentsDirectory = await getApplicationDocumentsDirectory();
+  String path = '${documentsDirectory.path}${Platform.pathSeparator}dir3';
+  var dir = await Directory(path).delete();
+}
+
+//创建一个 file.txt 文件：
+_createFile() async {
+  Directory documentsDirectory = await getApplicationDocumentsDirectory();
+  String path =
+      '${documentsDirectory.path}${Platform.pathSeparator}dirName${Platform.pathSeparator}file.txt';
+
+  var file = await File(path).create(recursive: true);
+//向 file.txt 文件写入字符串：
+  file.writeAsString('老孟 Flutter');
+//向 file.txt 文件写入 bytes 数据：
+  file.writeAsBytes(Utf8Encoder().convert("老孟 Flutter bytes 格式"));
+//上面两种方法都是覆盖写入，向末尾追加内容：
+  file.openWrite(mode: FileMode.append).write('老孟 Flutter 追加到末尾');
+
+//一行一行的读取数据：
+  List<String> lines = await file.readAsLines();
+  lines.forEach((element) {
+    print('$element');
+  });
+
+// 读取 bytes 并转换为String：
+  Utf8Decoder().convert(await file.readAsBytes());
+//删除
+  file.delete();
 }

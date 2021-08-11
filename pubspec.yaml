@@ -25,7 +25,9 @@ dependencies:
     sdk: flutter
   bloc: ^7.0.0
   path_provider:
+  shared_preferences:
   flutter_bloc:
+  sqflite:
   http: ^0.13.0
   equatable: ^2.0.3
   rxdart: ^0.26.0
