@@ -28,6 +28,7 @@ dependencies:
   shared_preferences:
   flutter_bloc:
   sqflite:
+  dio:
   http: ^0.13.0
   equatable: ^2.0.3
   rxdart: ^0.26.0
