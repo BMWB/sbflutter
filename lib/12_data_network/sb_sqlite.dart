@@ -1,7 +1,7 @@
 /*
  * @Author: wangtianji
  * @Date: 2021-08-11 14:31:59
- * @LastEditTime: 2021-08-11 14:37:15
+ * @LastEditTime: 2021-08-11 15:07:40
  * @LastEditors: wangtianji
  * @Description: 
  * @FilePath: /sbflutter/lib/12_data_network/sb_sqlite.dart
@@ -34,7 +34,7 @@ class DBProvider {
 
   Future<Database> _initDB() async {
     Directory documentsDirectory = await getApplicationDocumentsDirectory();
-    String path = join(documentsDirectory.path, 'dbName');
+    String path = join(documentsDirectory.path, 'User');
     return await openDatabase(path,
         version: 1, onCreate: _onCreate, onUpgrade: _onUpgrade);
   }
@@ -162,6 +162,7 @@ class __AddUserState extends State<AddUser> {
                 child: Text('保存'),
                 onPressed: () async {
                   var user = User(
+                      id: 111,
                       name: '${_nameController.text}',
                       age: int.parse('${_ageController.text}'),
                       sex: int.parse('$_radioGroupValue'));
