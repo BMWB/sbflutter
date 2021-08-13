@@ -1,7 +1,7 @@
 /*
  * @Author: wangtianji
  * @Date: 2021-07-31 10:26:23
- * @LastEditTime: 2021-08-11 10:42:53
+ * @LastEditTime: 2021-08-13 11:05:14
  * @LastEditors: wangtianji
  * @Description: 
  * @FilePath: /sbflutter/lib/10_sb_pages/data/sb.dart
@@ -15,6 +15,7 @@ export 'package:sbflutter/06_scrollview/ext.dart';
 export 'package:sbflutter/10_navigator/ext.dart';
 export 'package:sbflutter/05_eventbus/ext.dart';
 export 'package:sbflutter/12_data_network/ext.dart';
+export 'package:sbflutter/26_webview/ext.dart';
 
 import 'package:sbflutter/13_channel/ext.dart';
 import 'package:sbflutter/11_animate/ext.dart';
@@ -24,6 +25,7 @@ import 'package:sbflutter/06_scrollview/ext.dart';
 import 'package:sbflutter/10_navigator/ext.dart';
 import 'package:sbflutter/05_eventbus/ext.dart';
 import 'package:sbflutter/12_data_network/ext.dart';
+import 'package:sbflutter/26_webview/ext.dart';
 
 import 'package:sbflutter/demos.dart';
 
@@ -55,4 +57,5 @@ final Demos = [
   ...channels,
   ...eventbus,
   ...datas,
+  ...webviews,
 ];

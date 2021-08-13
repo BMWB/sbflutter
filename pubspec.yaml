@@ -28,6 +28,7 @@ dependencies:
   shared_preferences:
   flutter_bloc:
   sqflite:
+  webview_flutter:
   dio:
   http: ^0.13.0
   equatable: ^2.0.3
